@@ -19,7 +19,6 @@ import { Question14 } from './components/questions/Question14';
 import { Question15 } from './components/questions/Question15';
 import { Question16 } from './components/questions/Question16';
 import { SubmitPage } from './components/questions/SubmitPage';
-import { supabase } from './lib/supabase';
 import type { SurveyData } from './types/survey';
 
 function App() {
@@ -107,10 +106,18 @@ function App() {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from('survey_responses').insert([surveyData]);
+      const response = await fetch('/api/submit-survey', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(surveyData),
+      });
 
-      if (error) {
-        console.error('Error submitting survey:', error);
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        console.error('Error submitting survey:', result.message);
         alert('There was an error submitting your survey. Please try again.');
       } else {
         setIsSubmitted(true);
