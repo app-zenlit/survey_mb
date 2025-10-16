@@ -5,17 +5,16 @@ interface Question12Props {
 
 export function Question12({ value, onChange }: Question12Props) {
   const options = [
-    "Not confident at all",
-    "Slightly confident",
-    "Moderately confident",
-    "Very confident",
-    "Expert / I help others learn"
+    "Not interested",
+    "Curious but skeptical",
+    "Interested and open to learning",
+    "Very excited and already exploring them"
   ];
 
   return (
     <div>
       <h2 className="text-xl font-semibold text-gray-800 mb-6">
-        12. How confident are you in your ability to use new digital tools without formal training?
+        12. How excited are you about future technologies (e.g., AI, automation, digital twins, AR/VR in design)?
       </h2>
       <div className="space-y-3">
         {options.map((option) => (
