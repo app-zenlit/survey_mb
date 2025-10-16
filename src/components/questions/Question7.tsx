@@ -9,7 +9,7 @@ export function Question7({ valueA, valueB, onChangeA, onChangeB }: Question7Pro
   return (
     <div>
       <h2 className="text-xl font-semibold text-gray-800 mb-6">
-        7a. Do you have any product-related problem statements that could be solved through digitalization?
+        7. Do you have any product-related problem statements that could be solved through digitalization?
       </h2>
       <textarea
         value={valueA}
@@ -20,7 +20,7 @@ export function Question7({ valueA, valueB, onChangeA, onChangeB }: Question7Pro
 
       <div className="mt-8">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          7b. How big an impact would solving this problem have?
+          What is the business impact if we solve stated problem?
         </h2>
         <div className="bg-gray-50 p-6 rounded-lg">
           <div className="flex justify-between items-center mb-2">
